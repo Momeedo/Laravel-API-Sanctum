@@ -68,9 +68,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Project Steps
 
-### Create Model
-
-1. Execute command:
+1. Create Model
 ```
 php artisan make:model
 ```
@@ -92,11 +90,13 @@ php artisan migrate --seed
     - Update the namespace's path and import thyese base Controller namespace.
     - Create API functions inside TaskController.php
     - Install API routes (For Laravel > 10):
+
     ```
     php artisan install:api
     ```
     - Set routes in routes/api.php
     - Check routes
+    
     ```
     php artisan route:list --path=api
     ```
