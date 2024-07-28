@@ -88,7 +88,7 @@ php artisan migrate --seed
     - Create directory Api/v1 under qpp/Http/Controllers.
     - Move TaskController.php to v1 subfolder.
     - Update the namespace's path and import thyese base Controller namespace.
-    - Create API functions inside TaskController.php
+    - Create API methods inside TaskController.php
     - Install API routes (For Laravel > 10):
     ```
     php artisan install:api
@@ -103,3 +103,10 @@ php artisan migrate --seed
     ```
     php artisan make:resource TaskResource
     ```
+    - Update TaskController.php's methods.
+10. Inserting and Validating
+    - Set rules in Requests/StoreTaskRequest.php
+    - Set the store method in TaskController.php
+    - Specify the fillable attribute in the Task model.
+11. Updating
+    - Update StoreTaskRequest.php and UpdateTaskRequest.php
