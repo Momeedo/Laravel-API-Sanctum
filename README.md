@@ -141,7 +141,7 @@ php artisan make:request LoginRequest
 php artisan tinker
 App\Models\User::factory()->create()
 ```
-11. DFor testing purposes on Postman:
+11. For testing purposes on Postman:
     - Add Pre-request Script
     ```
     pm.sendRequest({
