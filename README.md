@@ -68,6 +68,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Project Steps
 
+### Endpoints
+
 1. Create Model
 ```
 php artisan make:model
@@ -110,3 +112,21 @@ php artisan migrate --seed
     - Specify the fillable attribute in the Task model.
 11. Updating
     - Update StoreTaskRequest.php and UpdateTaskRequest.php
+
+
+### Sanctum
+1. Install Sanctum (Only if API was not installed previously)
+```
+php artisan install:api
+```
+2. Set domains in config/sanctum
+3. Define Sanctum's middlewares in bootstrap/app.php to instruct Laravel that incoming requests can authenticate using Laravel session cookies.
+4. Run:
+```
+php artisan config:publish cors
+```
+5. In config/cors, change supports_credentials to true
+6. Update .env file to allow subdomains
+```
+SESSION_DOMAIN=.domain.com
+```
