@@ -66,7 +66,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-## Commands
+## Project Steps
 
 ### Create Model
 
@@ -79,3 +79,6 @@ php artisan make:model
 ```
 factory, requests, migration, policy, resource
 ```
+4. Set Migration for Tasks by adding columns.
+5. Map the column names with values in factories/TaskFactory.php
+6. Set Seeders in seeders/DatabaseSeeder.php
