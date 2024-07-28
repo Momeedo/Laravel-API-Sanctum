@@ -130,3 +130,31 @@ php artisan config:publish cors
 ```
 SESSION_DOMAIN=.domain.com
 ```
+7. Create Auth Controller
+8. Create a form request validation
+```
+php artisan make:request LoginRequest
+```
+9. Set routes in web.php
+10. For testing purposes, creatw dummy users with Tinker
+```
+php artisan tinker
+App\Models\User::factory()->create()
+```
+11. DFor testing purposes on Postman:
+    - Add Pre-request Script
+    ```
+    pm.sendRequest({
+    url: "http://localhost:8000/sanctum/csrf-cookie",
+    method: "GET"
+    }, function (err, res, { cookies }) {
+        if (!err) {
+            pm.globals.set('csrf-token', cookies.get('XSRF-TOKEN'))
+        }
+    })
+    ```
+    - Add Header:
+    ```
+    X-XSRF-TOKEN: {{csrf-token}}
+    ```
+    **IMPORTANT:** In Postman, make sure to use the same domain set in .env
