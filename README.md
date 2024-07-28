@@ -64,3 +64,18 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Commands
+
+### Create Model
+
+1. Execute command:
+```
+php artisan make:model
+```
+2. Name Model
+3. Select: Factory, Form Requests, Migration, Policy, Resource Conctroller
+```
+factory, requests, migration, policy, resource
+```
