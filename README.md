@@ -75,10 +75,28 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 php artisan make:model
 ```
 2. Name Model
-3. Select: Factory, Form Requests, Migration, Policy, Resource Conctroller
+3. Select: Factory, Form Requests, Migration, Policy, Resource Controller
 ```
 factory, requests, migration, policy, resource
 ```
 4. Set Migration for Tasks by adding columns.
 5. Map the column names with values in factories/TaskFactory.php
 6. Set Seeders in seeders/DatabaseSeeder.php
+7. Migrate
+```
+php artisan migrate --seed
+```
+8. Create API endpoints
+    - Create directory Api/v1 under qpp/Http/Controllers.
+    - Move TaskController.php to v1 subfolder.
+    - Update the namespace's path and import thyese base Controller namespace.
+    - Create API functions inside TaskController.php
+    - Install API routes (For Laravel > 10):
+    ```
+    php artisan install:api
+    ```
+    - Set routes in routes/api.php
+    - Check routes
+    ```
+    php artisan route:list --path=api
+    ```
