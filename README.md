@@ -90,13 +90,16 @@ php artisan migrate --seed
     - Update the namespace's path and import thyese base Controller namespace.
     - Create API functions inside TaskController.php
     - Install API routes (For Laravel > 10):
-
     ```
     php artisan install:api
     ```
     - Set routes in routes/api.php
     - Check routes
-    
     ```
     php artisan route:list --path=api
+    ```
+9. Eloquent API Resources
+    - Create Resource and set the toArray function (To transform models and model resources to JSON easily)
+    ```
+    php artisan make:resource TaskResource
     ```
