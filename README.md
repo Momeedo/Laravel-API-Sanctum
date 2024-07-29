@@ -158,4 +158,10 @@ App\Models\User::factory()->create()
     X-XSRF-TOKEN: {{csrf-token}}
     ```
     **IMPORTANT:** In Postman, make sure to use the same domain set in .env
-12. Create the Logout and Register Endpoints (Registration will require q Request for form validation).
+12. Create the Logout and Register Endpoints (Registration will require a Request for form validation).
+13. Implement Token Auth.
+14. Create a new migration to add user_id foreign key to taks.
+15. Update DatabaseSeeder to create Users with Tasks then execute
+```
+php artisan migrate:fresh --seed
+```
