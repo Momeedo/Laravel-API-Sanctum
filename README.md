@@ -158,3 +158,4 @@ App\Models\User::factory()->create()
     X-XSRF-TOKEN: {{csrf-token}}
     ```
     **IMPORTANT:** In Postman, make sure to use the same domain set in .env
+12. Create the Logout and Register Endpoints (Registration will require q Request for form validation).
