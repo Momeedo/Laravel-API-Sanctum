@@ -166,3 +166,4 @@ App\Models\User::factory()->create()
 php artisan migrate:fresh --seed
 ```
 16. API v2
+17. Set Gates/Policies to restrict authorized access (Policies/TaskPolicy.php & TaskController.php).
