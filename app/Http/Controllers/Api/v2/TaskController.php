@@ -21,7 +21,7 @@ class TaskController extends Controller
         //return Task::all();
 
         Gate::authorize('viewAny', Task::class);
-        $userTasks = Auth::user()->tasks()->get();
+        $userTasks = Auth::user()->tasks()->handleSort(request()->query('sort_by') ?? 'time')->with('priority')->get();
         return TaskResource::collection($userTasks);
     }
 
@@ -34,6 +34,7 @@ class TaskController extends Controller
         Gate::authorize('create', Task::class);
 
         $task = $request->user()->tasks()->create($request->validated());
+        $task->load('priority');
 
         return TaskResource::make($task);
     }
@@ -44,6 +45,7 @@ class TaskController extends Controller
     public function show(Task $task)
     {
         Gate::authorize('view', $task);
+        $task->load('priority');
         return TaskResource::make($task);
     }
 
@@ -55,6 +57,7 @@ class TaskController extends Controller
         Gate::authorize('update', $task);
 
         $task -> update($request->validated());
+        $task->load('priority');
 
         return TaskResource::make($task);
     }

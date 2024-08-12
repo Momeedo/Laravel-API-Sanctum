@@ -18,8 +18,8 @@ class TaskResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'is_completed' => (boolean)$this->is_completed,
-
+            'is_completed' => (bool)$this->is_completed,
+            'priority' => PriorityResource::make($this->whenLoaded('priority'))
         ];
     }
 }
